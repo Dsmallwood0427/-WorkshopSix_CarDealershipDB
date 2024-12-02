@@ -28,8 +28,9 @@ DealershipID INT NOT NULL,
 CustomersName VARCHAR (100) NOT NULL,
 SaleDate DATE NOT NULL,
 SalePrice Int NOT NULL,
+VIN VARCHAR (50) NOT NULL,
 FOREIGN KEY (DealershipID) REFERENCES Dealership(DealershipID),
-FOREIGN KEY (VIN) REFERENCES Vehicals(VIN)
+FOREIGN KEY (VIN) REFERENCES vehicles(VIN)
 );
 
 INSERT INTO Dealership (Name, Address, Phone)
@@ -49,10 +50,10 @@ VALUES
 (1, '1HGCM82633A654321'),
 (2, '1HGCM82633A111111');
 
-INSERT INTO SalesContracts (DealershipID, VIN, CustomerName, SaleDate, SalePrice)
+INSERT INTO SalesContracts (ContractID, DealershipID, CustomersName, SaleDate, SalePrice, VIN)
 Values
-(1, '1HGCM82633A12456', 'Mike Smith', '2024-11-01', 20000),
-(2, '1HGCM82633A111111', 'Alix Woods', '2024-11-20', 30000);
+(1, 1, 'Mike Smith', '2024-11-01', 20000, '1HGCM82633A12456'),
+(2, 2, 'Alix Woods', '2024-11-20', 30000, '1HGCM82633A111111');
 
 
 
